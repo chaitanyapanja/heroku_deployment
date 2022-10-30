@@ -37,8 +37,11 @@
         <h1 class="login-title">Login</h1>
         <input type="text" class="login-input" name="username" placeholder="Username" autofocus="true"/>
         <input type="password" class="login-input" name="password" placeholder="Password"/>
+        <input type="radio" id="usertype" name="usertype" value="user"><label for="User">User</label>
+        <input type="radio" id="usertype" name="usertype" value="technician"><label for="Technician">Technician</label>
         <input type="submit" value="Login" name="submit" class="login-button"/>
-        <p class="link"><a href="registration.php">Registration</a></p>
+        <p class="link"><a href="registration.php">User Registration</a></p>
+        <p class="link"><a href="tech_registration.php">Technician Registration</a></p>
   </form>
 <?php
     }

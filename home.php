@@ -12,8 +12,8 @@ include('auth.php')
 <div class="container">
     <nav>
         <ul>
-            <li><a href="blank">Search Technician</a>&nbsp;&nbsp;</li>
-            <li><a href="blank">Post</a>&nbsp;&nbsp;</li>
+            <li><a href="search_technicians.php">Search Technician</a>&nbsp;&nbsp;</li>
+            <li><a href="posts.php">Post</a>&nbsp;&nbsp;</li>
             <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
