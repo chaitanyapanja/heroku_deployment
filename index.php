@@ -15,17 +15,46 @@
         $username = mysqli_real_escape_string($con, $username);
         $_SESSION['username'] =$username;
         $password = stripslashes($_REQUEST['password']);
+        $usertype = stripslashes($_REQUEST['usertype']);
         $password = mysqli_real_escape_string($con, $password);
         // Check user is exist in the database
         $query    = "SELECT * FROM `users` WHERE username='$username'
                      AND password='$password'";
         $result = mysqli_query($con, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
-        if ($rows == 1 ) {
-            header("Location: home.php");}
+        if ($username=='Admin' and $password=='Admin' and $usertype=='admin'){
+            header("Location: home_admin.php");
+        }
+        else if ($usertype=="user" ) {
+            $query    = "SELECT * FROM `users` WHERE username='$username'
+            AND password='$password'";
+            $result = mysqli_query($con, $query) or die(mysql_error());
+            $rows = mysqli_num_rows($result);
+            if ($rows==1){
+            header("Location: home_user.php");}
+            else{
+                echo "<div class='form'>
+                <h3>Incorrect Username/password.</h3><br/> 
+                <p class='link'>Click here to <a href='index.php'>Login</a> again.</p>
+                </div>";
+
+            }}
+            else if ($usertype=="technician" ) {
+            $query    = "SELECT * FROM `pending_technicians` WHERE username='$username'
+            AND password='$password'";
+            $result = mysqli_query($con, $query) or die(mysql_error());
+            $rows = mysqli_num_rows($result);
+            if ($rows==1){
+            header("Location: home_technician.php");}
+            else{
+                echo "<div class='form'>
+                <h3>Incorrect Username/password.</h3><br/> 
+                <p class='link'>Click here to <a href='index.php'>Login</a> again.</p>
+                </div>";}}
+              
         else {
             echo "<div class='form'>
-                  <h3>Incorrect Username/password.</h3><br/>
+                  <h3>Incorrect Username/password.</h3><br/> 
                   <p class='link'>Click here to <a href='index.php'>Login</a> again.</p>
                   </div>";
         }
@@ -39,6 +68,7 @@
         <input type="password" class="login-input" name="password" placeholder="Password"/>
         <input type="radio" id="usertype" name="usertype" value="user"><label for="User">User</label>
         <input type="radio" id="usertype" name="usertype" value="technician"><label for="Technician">Technician</label>
+        <input type="radio" id="usertype" name="usertype" value="admin"><label for="Admin">Admin</label>
         <input type="submit" value="Login" name="submit" class="login-button"/>
         <p class="link"><a href="registration.php">User Registration</a></p>
         <p class="link"><a href="tech_registration.php">Technician Registration</a></p>

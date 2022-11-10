@@ -8,7 +8,7 @@
 <div class="container">
     <nav>
         <ul>
-            <li><a href="blank">Post</a>&nbsp;&nbsp;</li>
+            <li><a href="posts.php">Post</a>&nbsp;&nbsp;</li>
             <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
@@ -27,14 +27,20 @@
     <tr>
     <th>Name</th>
     <th>Phone Number</th>
-    <th>Intro</th>
+    <th>Technician Type</th>
+    <th> Work Exp</th>
+    <th> Select </th>
     </tr>";
     while($row = mysqli_fetch_array($query))
     {
     echo "<tr>";
     echo "<td>" . $row['name'] . "</td>";
     echo "<td>" . $row['phnum'] . "</td>";
-    echo "<td>" . "I am " . $row['technicianType'] . " from " . $row['city'] . ". I have". $row['workexp'] . "years of experience." . "</td>";
+    echo "<td>" . $row['technicianType'] . "</td>";
+    echo "<td>" . $row['workexp']. "</td>";?>
+    <td><a href="schedule.php?username=<?php echo $row['username']?>">Select</a></td>
+    <?php
+    
   
     
     echo "</tr>";

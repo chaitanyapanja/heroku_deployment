@@ -8,8 +8,6 @@
 <div class="container">
     <nav>
         <ul>
-            <li><a href="blank">Post</a>&nbsp;&nbsp;</li>
-            <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
     </nav>
@@ -19,24 +17,24 @@
 </head>
 <body>
 <div class="form">
+<h2>Pending Requests</h2>
 <?php
     require('db.php');
     include('auth.php');
-    $query=mysqli_query($con, "SELECT * from `pending_technicians`");
-    echo "<table border='1'> 
+    $query=mysqli_query($con, "SELECT * from techncians");
+    echo "<table border='1' align='center'> 
     <tr>
-    <th>Name</th>
-    <th>Phone Number</th>
-    <th>Intro</th>
+    <th>User</th>
+    <th>Approve</th>
+    <th>Reject</th>
     </tr>";
     while($row = mysqli_fetch_array($query))
     {
-    echo "<tr>";
-    echo "<td>" . $row['name'] . "</td>";
-    echo "<td>" . $row['phnum'] . "</td>";
-    echo "<td>" . "I am " . $row['technicianType'] . " from " . $row['city'] . ". I have". $row['workexp'] . "years of experience." . "</td>";
-  
-    
+    echo "<tr>";?>
+    <td><a href="view.php?username=<?php echo $row['username']?>"><?php echo $row['username']?></a></td>
+    <td><a href="approve.php?username=<?php echo $row['username']?>">Approve</a></td>
+    <td><a href="reject.php?username=<?php echo $row['username']?>">Reject</a></td>
+    <?php
     echo "</tr>";
     }
     echo "</table>";
