@@ -23,6 +23,7 @@ include('auth.php');
 if(isset($_POST["schedule"]))
 {
 $username=$_SESSION['username'];
+$technician_username=$_GET['username'];
 $technician_name = stripslashes($_REQUEST['technician_name']);
 $technician_name = mysqli_real_escape_string($con, $technician_name);
 $technician_phnum = stripslashes($_REQUEST['technician_phnum']);
@@ -37,8 +38,8 @@ while($row = mysqli_fetch_array($query1))
 $user_name=$row['name'];
 $user_phnum=$row['Mobile_Num'];
 }
-$query2= "INSERT into `appointments` (user_name, user_phnum, technician_name, technician_phnum, appointment_date, appointment_time)
-VALUES ('$user_name', '$user_phnum', '$technician_name', '$technician_phnum','$appointment_date','$appointment_time')";
+$query2= "INSERT into `appointments` (user_username, technician_username, user_name, user_phnum, technician_name, technician_phnum, appointment_date, appointment_time, status)
+VALUES ('$username', '$technician_username','$user_name', '$user_phnum', '$technician_name', '$technician_phnum','$appointment_date','$appointment_time','pending')";
 $result2 = mysqli_query($con, $query2);
 if ($result2) {
 echo "<div class='form'>

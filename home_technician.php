@@ -8,7 +8,7 @@
 <div class="container">
     <nav>
         <ul>
-            <li><a href="blank">Upcoming Schedules</a>&nbsp;&nbsp;</li>
+            <li><a href="upcoming_schedule_technician.php">Upcoming Schedules</a>&nbsp;&nbsp;</li>
             <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
