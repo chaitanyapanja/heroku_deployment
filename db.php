@@ -1,6 +1,6 @@
 <?php
     // Enter your host name, database username, password, and database name.
-    If you have not set database password on localhost then set empty.
+    //If you have not set database password on localhost then set empty.
     $db_host = "us-cdbr-east-06.cleardb.net";
     $db_user = "b25f67b2227c76";
     $db_pass = "1c6ab525";
