@@ -8,10 +8,9 @@
 <div class="container">
   <nav>
         <ul>
-        <li><a href="search_technicians.php">Search Technician</a>&nbsp;&nbsp;</li>
-    
-            <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
-            <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
+        <li><a href="home.php">Home</a>&nbsp;&nbsp;</li>
+        <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
+        <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
     </nav>       
 </div>

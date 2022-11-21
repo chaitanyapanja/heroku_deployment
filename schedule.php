@@ -68,7 +68,7 @@ else{
     <?php
     }
     ?>
-<input type="date" class="login-input" name="appointment_date" placeholder="Appointment Date" />
+<input type="date" class="login-input" name="appointment_date" min="2022-11-22" placeholder="Appointment Date" />
 <select class="login-input" name="appointment_time" id="appointment_time">
 <option value="" selected="selected">Select Time </option>
 <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>

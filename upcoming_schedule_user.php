@@ -8,8 +8,8 @@
 <div class="container">
     <nav>
         <ul>
-            <li><a href="posts.php">Post</a>&nbsp;&nbsp;</li>
-            <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
+            <li><a href="home.php">Home</a>&nbsp;&nbsp;</li>
+            <li><a href="feedback.php">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
     </nav>
@@ -28,8 +28,8 @@
     if ($rows_count>=1){
     echo "<table border='1'> 
     <tr>
-    <th>Customer Name</th>
-    <th>Customer Phone Number</th>
+    <th>Technician Name</th>
+    <th>Technician Phone Number</th>
     <th>Appointment Date</th>
     <th>Appointment Time</th>
     </tr>";

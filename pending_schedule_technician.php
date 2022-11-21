@@ -8,7 +8,7 @@
 <div class="container">
     <nav>
         <ul>
-            <li><a href="blank">Post</a>&nbsp;&nbsp;</li>
+            <li><a href="home_technician.php">Home</a>&nbsp;&nbsp;</li>
             <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>

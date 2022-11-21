@@ -9,7 +9,7 @@
     <nav>
         <ul>
             <li><a href="home_technician.php">Home</a>&nbsp;&nbsp;</li>
-            <li><a href="blank">Feedback</a>&nbsp;&nbsp;</li>
+            <li><a href="view_feedback.php">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
     </nav>
@@ -39,7 +39,9 @@
     echo "<td>" . $row['user_name'] . "</td>";
     echo "<td>" . $row['user_phnum'] . "</td>";
     echo "<td>" . $row['appointment_date'] . "</td>";
-    echo "<td>" . $row['appointment_time']. "</td>";
+    echo "<td>" . $row['appointment_time']. "</td>"; ?>
+    <td><a href="done.php?id=<?php echo $row['appointment_id']?>">Done</a></td>
+    <?php
     echo "</tr>";
     }
     echo "</table>";

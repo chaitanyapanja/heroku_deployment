@@ -8,8 +8,9 @@
 <div class="container">
     <nav>
         <ul>
-            <li><a href="upcoming_schedule_technician.php">Upcoming Schedules</a>&nbsp;&nbsp;</li>
-            <li><a href="view_feedback.php">Feedback</a>&nbsp;&nbsp;</li>
+            <li><a href="posts.php">Post</a>&nbsp;&nbsp;</li>
+            <li><a href="upcoming_schedule_user.php">Schedules</a>&nbsp;&nbsp;</li>
+            <li><a href="feedback.php">Feedback</a>&nbsp;&nbsp;</li>
             <li><a href="logout.php">Logout</a>&nbsp;&nbsp;</li>
         </ul>
     </nav>
@@ -22,21 +23,22 @@
 <?php
     require('db.php');
     include('auth.php');
-    $query=mysqli_query($con, "SELECT * from `posts`");
+    $username = $_SESSION['username'];
+    $query=mysqli_query($con, "SELECT * from `feedback` where technician_username='$username'");
     echo "<table border='1'> 
     <tr>
-    <th>Name</th>
-    <th>Phone Number</th>
-    <th>Description</th>
+    <th>User</th>
+    <th>Rating</th>
+    <th>Comments</th>
     </tr>";
     while($row = mysqli_fetch_array($query))
     {
     echo "<tr>";
-    echo "<td>" . $row['name'] . "</td>";
-    echo "<td>" . $row['phnum'] . "</td>";
-    echo "<td>" . $row['description']."</td>";
-  
+    echo "<td>" . $row['user_username'] . "</td>";
+    echo "<td>" . $row['rating'] . "</td>";
+    echo "<td>" . $row['comments'] . "</td>";
     
+  
     echo "</tr>";
     }
     echo "</table>";
